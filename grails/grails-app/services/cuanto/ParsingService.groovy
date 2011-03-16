@@ -268,8 +268,12 @@ class ParsingService {
 		if (jsonTestOutcome.isNull(fieldName)) {
 			return null
 		} else {
-			def formatter = new SimpleDateFormat(Defaults.fullDateFormat)
+          try {
+            def formatter = new SimpleDateFormat(Defaults.fullDateFormat)
 			return formatter.parse(jsonTestOutcome.getString(fieldName))
+          } catch(Exception e) {
+			return new Date(jsonTestOutcome.getString(fieldName).toLong())            
+          }
 		}
 	}
 
