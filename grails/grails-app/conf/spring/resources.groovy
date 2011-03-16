@@ -27,6 +27,7 @@ import cuanto.formatter.ManualFormatter
 import cuanto.parsers.JunitReportParser
 import cuanto.parsers.CuantoManualParser
 import cuanto.parsers.TestNgParser
+import cuanto.parsers.JMeterParser
 import cuanto.queryprocessor.TestRunQueryModule
 import cuanto.queryprocessor.TestResultIsFailureQueryModule
 import cuanto.queryprocessor.TestResultQueryModule
@@ -56,6 +57,7 @@ beans = {
 		    new JunitReportParser(),
 		    new CuantoManualParser(),
 		    new TestNgParser(),
+            new JMeterParser(),
 		    new NUnitParser()
 	    ]
     }

@@ -293,6 +293,7 @@ class ParsingService {
 
 		testOutcome.testResult = dataService.result(parsableTestOutcome.testResult.toLowerCase())
 		testOutcome.duration = parsableTestOutcome.duration
+        testOutcome.dateExecuted = parsableTestOutcome.dateExecuted
 		testOutcome.testCase = testCase
 		testOutcome.testOutput = processTestOutput(parsableTestOutcome.testOutput)
 
@@ -303,6 +304,8 @@ class ParsingService {
 		testOutcome.testRun = testRun
 		testOutcome.startedAt = parsableTestOutcome.startedAt
 		testOutcome.finishedAt = parsableTestOutcome.finishedAt
+        testOutcome.dateExecuted = parsableTestOutcome.dateExecuted
+        testOutcome.dateCreated = parsableTestOutcome.dateCreated
 		testOutcome.isFailureStatusChanged = testOutcomeService.isFailureStatusChanged(testOutcome)
 		processTestFailure(testOutcome, project)
 		List tags = processTags(parsableTestOutcome)

@@ -95,6 +95,7 @@ class InitializationService {
 
 			typeList += new TestType(name: "JUnit")
 			typeList += new TestType(name: "TestNG")
+            typeList += new TestType(name: "JMeter")
 			typeList += new TestType(name: "NUnit")
 			typeList += new TestType(name: "Manual")
 

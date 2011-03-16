@@ -37,6 +37,7 @@ class ParsableTestOutcome {
 	Date startedAt
 	Date finishedAt
 	Date dateCreated
+    Date dateExecuted
 	Date lastUpdated
     List tags
 
@@ -58,6 +59,7 @@ class ParsableTestOutcome {
 		if (startedAt ? ! startedAt.equals(that.startedAt) : that.startedAt != null) return false;
 		if (finishedAt ? ! finishedAt.equals(that.finishedAt) : that.finishedAt != null) return false;
 		if (dateCreated ? ! dateCreated.equals(that.dateCreated) : that.dateCreated != null) return false;
+        if (dateExecuted ? ! dateExecuted.equals(that.dateExecuted) : that.dateExecuted != null) return false;
 		if (lastUpdated ? ! lastUpdated.equals(that.lastUpdated) : that.lastUpdated != null) return false;
 
 		return true;
@@ -76,6 +78,7 @@ class ParsableTestOutcome {
 		result = 31 * result + (startedAt ? startedAt.hashCode() : 0);
 		result = 31 * result + (finishedAt ? finishedAt.hashCode() : 0);
 		result = 31 * result + (dateCreated ? dateCreated.hashCode() : 0);
+	    result = 31 * result + (dateExecuted ? dateExecuted.hashCode() : 0);
 		result = 31 * result + (lastUpdated ? lastUpdated.hashCode() : 0);
 		return result;
 	}

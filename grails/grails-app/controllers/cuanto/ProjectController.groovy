@@ -331,6 +331,7 @@ class ProjectController {
 				dateExecuted: friendlyDate,
 				testProperties: testRun?.jsonTestProperties(),
 				dateCreated: testRun?.dateCreated, note: testRun?.note,
+                dateExecuted: testRun?.dateExecuted, note: testRun?.note,
 				valid: testRun?.valid, successRate: stats?.successRate ? stats?.successRate : 0,
 				tests: stats?.tests, passed: stats?.passed, failed: stats?.failed, skipped: stats?.skipped,
 				totalDuration: stats?.totalDuration, averageDuration: stats?.averageDuration,

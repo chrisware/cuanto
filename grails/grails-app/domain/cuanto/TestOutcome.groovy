@@ -39,6 +39,7 @@ class TestOutcome {
 		startedAt(nullable: true)
 		finishedAt(nullable: true)
 		dateCreated(nullable: true)
+        dateExecuted(nullable: true)
 		lastUpdated(nullable: true)
         tags(nullable:true)
 		isFailureStatusChanged(nullable:true)
@@ -71,6 +72,7 @@ class TestOutcome {
 	Date startedAt // when the test started
 	Date finishedAt // when the test finished
 	Date dateCreated  // this is the timestamp for when the database record was created
+    Date dateExecuted  // this is the timestamp for when the database record was created
 	Date lastUpdated // timestamp for when the database record was last updated
 	Boolean isFailureStatusChanged
 	List<TestOutcomeLink> links
@@ -129,6 +131,7 @@ class TestOutcome {
 
 		myJson.bug = outcome.bug == null ? null : [title: outcome.bug?.title, url: outcome.bug?.url, 'id': outcome.bug?.id]
 		myJson.dateCreated = outcome.dateCreated == null ? null : dateFormatter.format(outcome.dateCreated)
+        myJson.dateExecuted = outcome.dateExecuted == null ? null : dateFormatter.format(outcome.dateExecuted)
 		myJson.lastUpdated = outcome.lastUpdated == null ? null : dateFormatter.format(outcome.lastUpdated)
 		myJson.startedAt = outcome.startedAt == null ? null : dateFormatter.format(outcome.startedAt)
 		myJson.finishedAt = outcome.finishedAt == null ? null : dateFormatter.format(outcome.finishedAt)

@@ -151,6 +151,10 @@ public class TestRun {
 		if (this.dateExecuted != null){
 			jsonMap.put("dateExecuted", toJsonDate(this.dateExecuted));
 		}
+
+        if (this.dateCreated != null){
+			jsonMap.put("dateCreated", toJsonDate(this.dateCreated));
+		}
 		if (this.valid != null) {
 			jsonMap.put("valid", this.valid);
 		}

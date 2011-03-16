@@ -33,6 +33,7 @@ class ParsableTestCase implements Comparable {
 	String fullName
 	String parameters
 	String description
+    String startedAt
 	Long id
 
 	boolean equals(o) {
@@ -48,6 +49,7 @@ class ParsableTestCase implements Comparable {
 		if (parameters ? !parameters.equals(that.parameters) : that.parameters != null) return false;
 		if (project ? !project.equals(that.project) : that.project != null) return false;
 		if (testName ? !testName.equals(that.testName) : that.testName != null) return false;
+        if (startedAt? !startedAt.equals(that.startedAt) : that.startedAt != null) return false;
 		if (id ? !id.equals(that.id) : that.id != null) return false;
 
 		return true;
@@ -62,6 +64,7 @@ class ParsableTestCase implements Comparable {
 		result = 31 * result + (fullName ? fullName.hashCode() : 0);
 		result = 31 * result + (parameters ? parameters.hashCode() : 0);
 		result = 31 * result + (description ? description.hashCode() : 0);
+        result = 31 * result + (startedAt? startedAt.hashCode() : 0);
 		return result;
 	}
 
@@ -80,6 +83,10 @@ class ParsableTestCase implements Comparable {
 			return this.description.compareTo(other.description)
 		if (this.parameters != other.parameters)
 		    return this.parameters.compareTo(other.parameters)
+        if (this.startedAt!= other.startedAt)
+		    return this.startedAt.compareTo(other.startedAt)
+
+
 		return 0
 	}
 
