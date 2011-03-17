@@ -62,7 +62,7 @@ YAHOO.cuanto.groupHistory = function() {
 	function getTestRunTableColumnDefs() {
 		return [
 			{key:"projectName", label: "Project Name", sortable: false},
-			{key:"dateExecuted", label:"Test Run", sortable:true},
+			{key:"dateExecuted", label:"Executed", sortable:true, formatter:formatDate},
 			{key:"tests", label:"Tests", sortable:true},
 			{key:"passed", label:"Passed", sortable:true},
 			{key:"failed", label: "Failed", sortable:true},
@@ -80,6 +80,9 @@ YAHOO.cuanto.groupHistory = function() {
 		$(elCell).html(oData + " %");
 	}
 
+    function formatDate(elCell, oRecord, oColumn, oData) {
+        $(elCell).html(YAHOO.util.Date.format(new Date(oData), {format: "%Y-%m-%d %T"}));
+	}
 
 	function propertyFormatter(elCell, oRecord, oColumn, oData) {
 		var out = "";

@@ -74,7 +74,7 @@ YAHOO.cuanto.projectHistory = function() {
 	function getTestRunTableColumnDefs(propertyNames) {
 		var columns = [
 			{key: "checked", label: "Sel.", width: 20, formatter: selectControl.formatSelect, hidden: true},
-			{key:"dateExecuted", label:"Test Run", sortable:true, width: 125},
+			{key:"dateExecuted", label:"Executed", sortable:true, width: 125, formatter:formatDate},
 			{key:"tests", label:"Tests", sortable:true},
 			{key:"passed", label:"Passed", sortable:true},
 			{key:"failed", label: "Failed", sortable:true},
@@ -144,6 +144,9 @@ YAHOO.cuanto.projectHistory = function() {
 		$(elCell).html(oData + " %");
 	}
 
+    function formatDate(elCell, oRecord, oColumn, oData) {
+        $(elCell).html(YAHOO.util.Date.format(new Date(oData), {format: "%Y-%m-%d %T"}));
+	}
 
 	function propertyFormatter(elCell, oRecord, oColumn, oData) {
 		var out = "";
