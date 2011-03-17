@@ -1,0 +1,13 @@
+.charts {
+    overflow: auto;
+    float: left;
+    clear: both;
+    width: 1200px;
+}
+
+.chart {
+    float: left;
+    padding: 5px;
+    margin: 5px;
+    border: 1px solid #ccc;
+}
