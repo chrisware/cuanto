@@ -11,13 +11,13 @@ var ChartHelper = {
             strokeWidth:1,
             drawPoints:false,
             pointSize:2,
-            colors: ['green','grey'],
+            //colors: ['green','grey'],
             rightGap:50,
             width:"1200px",
             height:"450px",
             showRoller: true,
-            rollPeriod: Math.round(chart.data.D.length/20)
-            //stepPlot: true
+            rollPeriod: Math.round(chart.data.D.length/20),
+            stepPlot: true
         });
 
         //google.visualization.drawToolbar(container, components);
@@ -57,14 +57,21 @@ function PerformanceByTestCaseId(options) {
         var myself = this;
         var url1 = Cuanto.API_BASE_URL + "getTestOutcomes?testCase=" + options.testCases[0] + "&sort=startDate&order=desc&max=200";
         $.getJSON(url1, function(data) {
-            $(data.testOutcomes).each(function() {
+            $(data.testOutcomes).each(function(idx) {
                 var oc = this;
                 myself.testName = oc.testCase.testName;
                 myself.data.setColumnLabel(1, oc.testCase.testName);
                 var startedAt = oc.dateExecuted ? new Date(oc.dateExecuted) : new Date(oc.dateCreated); // x-axis
                 var duration = oc.duration; // y-axis
+                /*if(idx==0) {
+                    myself.data.addRow([startedAt,0]);
+                }*/
                 myself.data.addRow([startedAt, duration]);
+                /*if (idx == data.testOutcomes.length-1) {
+                    myself.data.addRow([startedAt,0]);
+                }*/
             });
+
             ChartHelper.drawDygraph({title: myself.testName, data: myself.data});
         });
     }

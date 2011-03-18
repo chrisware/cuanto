@@ -11,3 +11,10 @@
     margin: 5px;
     border: 1px solid #ccc;
 }
+
+.chart span {
+    font-weight: bold;
+    font-size: 72px;
+    text-align: center;
+    display: block;
+}
