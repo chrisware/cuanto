@@ -62,7 +62,7 @@ YAHOO.cuanto.groupHistory = function() {
 	function getTestRunTableColumnDefs() {
 		return [
 			{key:"projectName", label: "Project Name", sortable: false},
-			{key:"dateExecuted", label:"Executed", sortable:true, formatter:formatDate},
+			{key:"dateExecuted", label:"Created", sortable:true, formatter:formatDate},
 			{key:"tests", label:"Tests", sortable:true},
 			{key:"passed", label:"Passed", sortable:true},
 			{key:"failed", label: "Failed", sortable:true},

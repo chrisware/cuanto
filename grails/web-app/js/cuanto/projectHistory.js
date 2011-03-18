@@ -74,7 +74,7 @@ YAHOO.cuanto.projectHistory = function() {
 	function getTestRunTableColumnDefs(propertyNames) {
 		var columns = [
 			{key: "checked", label: "Sel.", width: 20, formatter: selectControl.formatSelect, hidden: true},
-			{key:"dateExecuted", label:"Executed", sortable:true, width: 125, formatter:formatDate},
+			{key:"dateExecuted", label:"Created", sortable:true, width: 125, formatter:formatDate},
 			{key:"tests", label:"Tests", sortable:true},
 			{key:"passed", label:"Passed", sortable:true},
 			{key:"failed", label: "Failed", sortable:true},
